@@ -2,11 +2,14 @@
 // ===========================================================
 // card variables
 var beginQuiz = document.querySelector("#quizBegin");
+var quests = document.querySelector("#questions");
 var qu1 = document.querySelector("#q1");
 var qu2 = document.querySelector("#q2");
 var qu3 = document.querySelector("#q3");
 var qu4 = document.querySelector("#q4");
 var qu5 = document.querySelector("#q5");
+var feedB = document.querySelector("#feedback");
+var initial = document.querySelector("#initials");
 
 // button variables
 var beginBtn = document.querySelector("#btnBegin");
@@ -14,7 +17,7 @@ var beginBtn = document.querySelector("#btnBegin");
 // number variables
 var secondsLeft = document.querySelector("#timeLeft");
 var seconds = 100;
-var score = 0;
+var questionNumber = 0;
 
 // quiz question variables
 var answers = {"qu1": "this",
@@ -25,8 +28,7 @@ var answers = {"qu1": "this",
 
 // EVENT LISTENERS
 beginBtn.addEventListener("click",beginTimer);
-qu1.addEventListener("click",question);
-
+quests.addEventListener("click",question);
 
 // FUNCTIONS
 // ===========================================================
@@ -50,17 +52,34 @@ function beginTimer(event) {
 function question(event) {
     event.preventDefault();
     var parent = event.target.parentElement.id;
+    var container = event.currentTarget.children;
 
-    if (event.target.matches("button")) {
-        if (event.target.textContent === answers[event.target.parentElement.id]) {
-            var ansCheck = document.createElement("p");
-            ansCheck.innerHTML = "<hr>"+ "Correct!";
-            event.target.parentElement.append(ansCheck);
+    if (event.target.matches("button") && questionNumber < (container.length)-1) {
+        if (event.target.textContent === answers[parent]) {
+            feedB.innerHTML = "<hr>"+ "Correct!";
+            feedB.setAttribute("style","visibility: visible");
+            // container[questionNumber].setAttribute("style","display:none");
+            // questionNumber++
+            // container[questionNumber].setAttribute("style","display:block");
         }
         else {
-            var ansCheck = document.createElement("p");
-            ansCheck.innerHTML = "<hr>"+ "Better luck next time!";
-            event.target.parentElement.append(ansCheck);
+            feedB.innerHTML = "<hr>"+ "Better luck next time!";
+            feedB.setAttribute("style","visibility: visible");
         }
+
+        container[questionNumber].setAttribute("style","display:none");
+        questionNumber++
+        container[questionNumber].setAttribute("style","display:block");
+
+    } else if (event.target.matches("button")) {
+        container[questionNumber].setAttribute("style","display:none");
+        initial.setAttribute("style","display: block");
     }
+
+    setTimeout(function() {
+        feedB.setAttribute("style","visibility: hidden");
+    },1000);
 }
+    
+
+
