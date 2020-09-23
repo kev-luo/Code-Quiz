@@ -17,32 +17,86 @@
           <a class="nav-link active" href="#">View Highscores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Time: </a>
+          <p style="float:left">Time:</p>
+          <p id = "timeLeft" style="float:left; padding:0px 15px" >0</a>
         </li>
     </ul>
 
-    <!-- Quiz start card -->
-    <div class="card mx-auto" style="width: 50rem;">
-        <div class="card-body text-center">
-          <h2 class="card-title font-weight-bold">Quiz Challenge</h5>
-            <p class="card-text">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-            <button type="button" class="btn btn-dark">Let's Do This</button>
+    <div class = "mx-auto" style="width:50%">
+        <!-- Quiz start card -->
+        <div id = "quizBegin" class="card" style="display: block">
+            <div class="card-body text-center">
+            <h2 class="card-title font-weight-bold">Quiz Challenge</h5>
+                <p class="card-text">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <button id = "btnBegin" type="button" class="btn btn-dark">Let's Do This</button>
+            </div>
+        </div>
+
+        <!-- Quiz question 1 card -->
+        <div id = "q1" class="card" style="display: none">
+            <div class="card-body">
+            <h2 class="card-title font-weight-bold">First Question</h5>
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+            </div>
+            </div>
+        </div>
+
+        <!-- Quiz question 2 card -->
+        <div id = "q2" class="card" style="display: none">
+            <div class="card-body">
+                <h2 class="card-title font-weight-bold">Second Question</h5>
+                <div class="btn-group-vertical">
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz question 3 card -->
+        <div id = "q3" class="card" style="display: none">
+            <div class="card-body">
+            <h2 class="card-title font-weight-bold">Third Question</h5>
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+            </div>
+            </div>
+        </div>
+
+        <!-- Quiz question 4 card -->
+        <div id = "q4" class="card" style="display: none">
+            <div class="card-body">
+                <h2 class="card-title font-weight-bold">Fourth Question</h5>
+                <div class="btn-group-vertical">
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz question 5 card -->
+        <div id = "q5" class="card" style="display: none">
+            <div class="card-body">
+            <h2 class="card-title font-weight-bold">Fifth Question</h5>
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+            </div>
+            </div>
         </div>
     </div>
-
-    <!-- Quiz question 1 card -->
-    <div class="card mx-auto" style="width: 50rem;">
-        <div class="card-body">
-          <h2 class="card-title font-weight-bold">First Question</h5>
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-dark">Dark</button>
-            <button type="button" class="btn btn-dark">Dark</button>
-            <button type="button" class="btn btn-dark">Dark</button>
-            <button type="button" class="btn btn-dark">Dark</button>
-          </div>
-        </div>
-    </div>
-
     <!-- start quiz button trigger timer -->
     <!-- each question has buttons to click for the answers -->
     <!-- small display text telling you if you got the question right or wrong -->
@@ -54,5 +108,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
+
