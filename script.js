@@ -31,11 +31,11 @@ var score;
 var seconds;
 
 // quiz question variables
-var answers = {"qu1": "this",
-"qu2": "that",
-"qu3": "or",
-"qu4": "perhaps",
-"qu5": "both"};
+var answers = {"qu1": "Uruguay",
+"qu2": "There is no offical field size - soccer is anarchy",
+"qu3": "Pakistan",
+"qu4": "11",
+"qu5": "Messi"};
 
 // EVENT LISTENERS
 beginBtn.addEventListener("click",beginTimer);
@@ -52,7 +52,7 @@ window.addEventListener("load",loadHs);
 function beginTimer(event) {
     event.preventDefault();
 
-    seconds = 20; // assign initial value, reset time
+    seconds = 60; // assign initial value, reset time
 
     beginQuiz.setAttribute("style","display: none"); 
     qu1.setAttribute("style","display: block"); // change displayed card to first question
@@ -71,7 +71,7 @@ function beginTimer(event) {
         if (seconds <= 0) {
             clearInterval(timeInterval);
             feedB.setAttribute("style","visibility: visible");
-            feedB.innerHTML = "<hr>"+ "You ran out of time!";
+            feedB.innerHTML = "<hr style='border:1px solid white'>"+ "You ran out of time!";
             final.textContent = score;
             container[questionNumber].setAttribute("style","display: none"); // if quiz is unfinished the current question card is no longer displayed, and replaced with the enter initials card
             highScore.setAttribute("style","display: none"); 
@@ -92,13 +92,13 @@ function question(event) {
     if (event.target.matches("button") && questionNumber < (container.length)-1) { // what to do if button is clicked and it's' not the last question
         if (event.target.textContent === answers[parent]) { // what to do if answer is correct
             feedB.setAttribute("style","visibility: visible");
-            feedB.innerHTML = "<hr>"+ "Correct!";
+            feedB.innerHTML = "<hr style='border:1px solid white'>"+ "Correct!";
             score++
         }
         else { // what to do if answer is incorrect
             seconds -= 10;
             feedB.setAttribute("style","visibility: visible");
-            feedB.innerHTML = "<hr>"+ "Better luck next time!";
+            feedB.innerHTML = "<hr style='border:1px solid white'>"+ "Better luck next time!";
         }
 
         container[questionNumber].setAttribute("style","display: none");
@@ -108,13 +108,13 @@ function question(event) {
     } else if (event.target.matches("button")) { // what to do if button is clicked and it is the last question
         if (event.target.textContent === answers[parent]) {
             feedB.setAttribute("style","visibility: visible");
-            feedB.innerHTML = "<hr>"+ "Correct!";
+            feedB.innerHTML = "<hr style='border:1px solid white'>"+ "Correct!";
             score++
         }
         else {
             seconds -=10;
             feedB.setAttribute("style","visibility: visible");
-            feedB.innerHTML = "<hr>"+ "Better luck next time!";
+            feedB.innerHTML = "<hr style='border:1px solid white'>"+ "Better luck next time!";
         }
 
         container[questionNumber].setAttribute("style","display: none");
@@ -133,6 +133,8 @@ function addInitials(event) {
 
     var li = document.createElement("li");
     li.textContent = name+' - '+score.toString();
+    li.setAttribute("class","list-group-item list-group-item-seconday");
+    li.setAttribute("style","display:list-item");
     scoreList.append(li); // append new input to the list so it displays on site
 
     initialInp.value=''; // clear input area if user wants to play again
@@ -193,6 +195,8 @@ function loadHs() {
     for (var i = 0; i < localStorage.length; i++) {
         var li = document.createElement("li");
         li.textContent = localStorage.getItem(localStorage.key(i));
+        li.setAttribute("class","list-group-item list-group-item-seconday");
+        li.setAttribute("style","display:list-item");
         scoreList.append(li);
     }
 }

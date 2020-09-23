@@ -8,94 +8,95 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="style.css">
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body class="container-fluid">
     <!-- nav containing view highscores link, and timer -->
     <ul id = "topBar" class="nav justify-content-between">
-        <li class="nav-item">
+        <li class="nav-pills">
           <a id = "navViewHs" class="nav-link active" href="#">View Highscores</a>
         </li>
         <li class="nav-item">
-          <p style="float:left">Time:</p>
-          <p id = "timeLeft" style="float:left; padding:0px 15px" >0</a>
+          <p style="float:left; color: white; font-size: 20px;">Time:</p>
+          <p id = "timeLeft" style="float:left; padding:0px 15px; color: white; font-size: 20px;" >0</a>
         </li>
     </ul>
 
     <!-- Quiz start card -->
     <div class = "mx-auto" style="width:50%">
-        <div id = "quizBegin" class="card" style="display: block">
+        <div id = "quizBegin" class="card text-white bg-secondary border-dark" style="display: block">
             <div class="card-body text-center">
-                <h2 class="card-title font-weight-bold">Quiz Challenge</h2>
-                <p class="card-text">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <h2 class="card-title font-weight-bold">GOLASOOOOOOOO!!!</h2>
+                <p class="card-text">Try to answer the following soccer-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
                 <button id = "btnBegin" type="button" class="btn btn-primary ">Let's Do This</button>
             </div>
         </div>
     </div>
 
     <!-- Questions -->
-    <div id = "questions" class = "mx-auto" style="width:50%">
+    <div id = "questions" class = "mx-auto border-dark" style="width:50%">
         <!-- Quiz question 1 card -->
-        <div id = "q1" class="card" style="display: none">
+        <div id = "q1" class="card text-white bg-secondary" style="display: none">
             <div class="card-body">
-                <h2 class="card-title font-weight-bold">First Question</h2>
-                <div id = "qu1" class="btn-group-vertical">
-                    <button type="button" class="btn btn-dark">this</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
+                <h2 class="card-title font-weight-bold">In 1930, the very first World Cup was hosted by which country?</h2>
+                <div id = "qu1" class="btn-group-vertical btn-block">
+                    <button type="button" class="btn btn-dark" style="text-align:start">Brazil</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">France</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">Germany</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">Uruguay</button>
                 </div>
             </div>
         </div>
 
         <!-- Quiz question 2 card -->
-        <div id = "q2" class="card" style="display: none">
+        <div id = "q2" class="card text-white bg-secondary " style="display: none">
             <div class="card-body">
-                <h2 class="card-title font-weight-bold">Second Question</h2>
-                <div id = "qu2" class="btn-group-vertical">
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">that</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
+                <h2 class="card-title font-weight-bold">What is the official field size (lxw) for all professional leagues?</h2>
+                <div id = "qu2" class="btn-group-vertical btn-block">
+                    <button type="button" class="btn btn-dark" style="text-align:start">100x100</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">150x100</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">110x70</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">There is no offical field size - soccer is anarchy</button>
                 </div>
             </div>
         </div>
 
         <!-- Quiz question 3 card -->
-        <div id = "q3" class="card" style="display: none">
+        <div id = "q3" class="card text-white bg-secondary " style="display: none">
             <div class="card-body">
-                <h2 class="card-title font-weight-bold">Third Question</h2>
-                <div id = "qu3" class="btn-group-vertical">
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">or</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
+                <h2 class="card-title font-weight-bold">This country accounts for around 75% of all soccer balls manufactured in the world.</h2>
+                <div id = "qu3" class="btn-group-vertical btn-block">
+                    <button type="button" class="btn btn-dark" style="text-align:start">Russia</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">China</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">Pakistan</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">The UK</button>
                 </div>
             </div>
         </div>
 
         <!-- Quiz question 4 card -->
-        <div id = "q4" class="card" style="display: none">
+        <div id = "q4" class="card text-white bg-secondary " style="display: none">
             <div class="card-body">
-                <h2 class="card-title font-weight-bold">Fourth Question</h2>
-                <div id = "qu4" class="btn-group-vertical">
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">perhaps</button>
+                <h2 class="card-title font-weight-bold">How many outfield players does each team start out with?</h2>
+                <div id = "qu4" class="btn-group-vertical btn-block">
+                    <button type="button" class="btn btn-dark" style="text-align:start">11</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">15</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">20</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">5</button>
                 </div>
             </div>
         </div>
 
         <!-- Quiz question 5 card -->
-        <div id = "q5" class="card" style="display: none">
+        <div id = "q5" class="card text-white bg-secondary " style="display: none">
             <div class="card-body">
-                <h2 class="card-title font-weight-bold">Fifth Question</h2>
-                <div id = "qu5" class="btn-group-vertical">
-                    <button type="button" class="btn btn-dark">both</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
-                    <button type="button" class="btn btn-dark">Dark</button>
+                <h2 class="card-title font-weight-bold">Who is the best soccer player in the world?</h2>
+                <div id = "qu5" class="btn-group-vertical btn-block">
+                    <button type="button" class="btn btn-dark" style="text-align:start">Messi</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">Wrong</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">Wrong</button>
+                    <button type="button" class="btn btn-dark" style="text-align:start">Wrong</button>
                 </div>
             </div>
         </div>
@@ -103,7 +104,7 @@
 
     <!-- Enter initials card -->
     <div class = "mx-auto" style="width:50%">
-        <div id = "initials" class="card" style="display: none">
+        <div id = "initials" class="card border-dark text-white bg-secondary " style="display: none">
             <div class="card-body">
                 <h2 class="card-title font-weight-bold">All done!</h2>
                 <p class="card-text" style="float: left; margin-right: 10px;">Final Score (Out of 5): </p>
@@ -117,18 +118,18 @@
 
     <!-- Highscores card -->
     <div class = "mx-auto" style="width:50%">
-        <div id = "highScores" class="card" style="display: none">
+        <div id = "highScores" class="card border-dark bg-secondary " style="display: none">
             <div class="card-body">
-                <h2 class="card-title font-weight-bold">Highscores</h2>
-                <ol id = "highS" class="card-text"></ol>
-                <button id = "goBack" type="button" class="btn btn-primary ">Go Back</button>
-                <button id = "clearHs" type="button" class="btn btn-primary ">Clear Highscores</button>
+                <h2 class="card-title font-weight-bold text-white ">Highscores</h2>
+                <ol id = "highS" class="list-group list-group-flush" style="list-style:decimal inside; font-weight: bold;"></ol>
+                <button id = "goBack" type="button" class="btn btn-primary mt-3">Go Back</button>
+                <button id = "clearHs" type="button" class="btn btn-primary mt-3">Clear Highscores</button>
             </div>
         </div>
     </div>
 
     <!-- feedback div -->
-    <div style="margin: auto ; width: 50%;">
+    <div style="margin: auto ; width: 50%; color: white;">
         <p id="feedback"></p>
     </div>
   
