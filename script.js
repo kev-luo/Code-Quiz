@@ -25,8 +25,10 @@ var clearHsBtn = document.querySelector("#clearHs");
 var navHs = document.querySelector("#navViewHs");
 
 // number variables
+var secondsLeft = document.querySelector("#timeLeft");
 var questionNumber = 0;
 var score;
+var seconds;
 
 // quiz question variables
 var answers = {"qu1": "this",
@@ -53,21 +55,31 @@ navHs.addEventListener("click",view);
 function beginTimer(event) {
     event.preventDefault();
 
-    var secondsLeft = document.querySelector("#timeLeft");
-    var seconds = 100;
+    seconds = 20;
 
     beginQuiz.setAttribute("style", "display: none");
     qu1.setAttribute("style", "display: block");
     score = 0;
     questionNumber = 0;
+    container = quests.children;
 
     var timeInterval = setInterval(function() {
         seconds--;
-        secondsLeft.textContent = seconds;
+        if (seconds < 0) {
+            secondsLeft.textContent = 0;
+        } else {
+            secondsLeft.textContent = seconds;
+        }
 
-        if (seconds === 0 || initial.getAttribute("style")==="display: block") {
+        if (seconds <= 0) {
             clearInterval(timeInterval);
-            
+            final.textContent = score;
+            container[questionNumber].setAttribute("style","display: none");
+            initial.setAttribute("style","display: block");
+            feedB.innerHTML = "<hr>"+ "You ran out of time!";
+            feedback();
+        } else if (initial.getAttribute("style")==="display: block" || highScore.getAttribute("style")==="display: block") {
+            clearInterval(timeInterval);
         }
     },1000);
 };
@@ -85,6 +97,7 @@ function question(event) {
             score++
         }
         else {
+            seconds -= 10;
             feedB.innerHTML = "<hr>"+ "Better luck next time!";
             feedB.setAttribute("style","visibility: visible");
         }
@@ -100,6 +113,7 @@ function question(event) {
             score++
         }
         else {
+            seconds -=10;
             feedB.innerHTML = "<hr>"+ "Better luck next time!";
             feedB.setAttribute("style","visibility: visible");
         }
@@ -109,9 +123,7 @@ function question(event) {
         final.textContent = score;
     }
 
-    setTimeout(function() {
-        feedB.setAttribute("style","visibility: hidden");
-    },1000);
+    feedback();
 }
     
 // add initials function
@@ -135,13 +147,13 @@ function back(event) {
     highScore.setAttribute("style", "display: none");
     beginQuiz.setAttribute("style", "display: block");
     bar.setAttribute("style","visibility: inline");
+    secondsLeft.textContent = 0;
 }
 
 // clear highscores function
 function clearH(event) {
     event.preventDefault();
     scoreList.innerHTML = '';
-    bar.setAttribute("style","visibility: inline");
 }
 
 // view highscores function
@@ -157,4 +169,11 @@ function view(event) {
         bar.setAttribute("style","visibility: hidden");
         highScore.setAttribute("style","display: block");
     }
+}
+
+// timeout function
+function feedback() {
+    setTimeout(function() {
+        feedB.setAttribute("style","visibility: hidden");
+    },1500);
 }
