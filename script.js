@@ -14,15 +14,18 @@ var final = document.querySelector("#finalScore");
 var initialInp = document.querySelector("#initialsInp");
 var highScore = document.querySelector("#highScores");
 var scoreList = document.querySelector("#highS");
+var bar = document.querySelector("#topBar");
+var container;
 
 // button variables
 var beginBtn = document.querySelector("#btnBegin");
 var initialBtn = document.querySelector("#btnInitial");
 var goBackBtn = document.querySelector("#goBack");
 var clearHsBtn = document.querySelector("#clearHs");
+var navHs = document.querySelector("#navViewHs");
 
 // number variables
-var questionNumber;
+var questionNumber = 0;
 var score;
 
 // quiz question variables
@@ -41,6 +44,7 @@ quests.addEventListener("click",question);
 initialBtn.addEventListener("click",addInitials);
 goBackBtn.addEventListener("click",back);
 clearHsBtn.addEventListener("click",clearH);
+navHs.addEventListener("click",view);
 
 
 // FUNCTIONS
@@ -63,6 +67,7 @@ function beginTimer(event) {
 
         if (seconds === 0 || initial.getAttribute("style")==="display: block") {
             clearInterval(timeInterval);
+            
         }
     },1000);
 };
@@ -71,7 +76,7 @@ function beginTimer(event) {
 function question(event) {
     event.preventDefault();
     var parent = event.target.parentElement.id;
-    var container = event.currentTarget.children;
+    container = event.currentTarget.children;
 
     if (event.target.matches("button") && questionNumber < (container.length)-1) {
         if (event.target.textContent === answers[parent]) {
@@ -84,9 +89,9 @@ function question(event) {
             feedB.setAttribute("style","visibility: visible");
         }
 
-        container[questionNumber].setAttribute("style","display:none");
+        container[questionNumber].setAttribute("style","display: none");
         questionNumber++
-        container[questionNumber].setAttribute("style","display:block");
+        container[questionNumber].setAttribute("style","display: block");
 
     } else if (event.target.matches("button")) {
         if (event.target.textContent === answers[parent]) {
@@ -99,7 +104,7 @@ function question(event) {
             feedB.setAttribute("style","visibility: visible");
         }
 
-        container[questionNumber].setAttribute("style","display:none");
+        container[questionNumber].setAttribute("style","display: none");
         initial.setAttribute("style","display: block");
         final.textContent = score;
     }
@@ -120,6 +125,7 @@ function addInitials(event) {
     scoreList.append(li);
 
     initial.setAttribute("style","display: none");
+    bar.setAttribute("style","visibility: hidden");
     highScore.setAttribute("style","display: block");
 }
 
@@ -128,12 +134,27 @@ function back(event) {
     event.preventDefault();
     highScore.setAttribute("style", "display: none");
     beginQuiz.setAttribute("style", "display: block");
+    bar.setAttribute("style","visibility: inline");
 }
 
 // clear highscores function
 function clearH(event) {
     event.preventDefault();
     scoreList.innerHTML = '';
+    bar.setAttribute("style","visibility: inline");
 }
 
-
+// view highscores function
+function view(event) {
+    console.log("hello");
+    if (beginQuiz.getAttribute("style") === "display: block") {
+        beginQuiz.setAttribute("style","display: none");
+        bar.setAttribute("style","visibility: hidden");
+        highScore.setAttribute("style","display: block");
+    } else {
+        container[questionNumber].setAttribute("style","display: none");
+        initial.setAttribute("style","display: none");
+        bar.setAttribute("style","visibility: hidden");
+        highScore.setAttribute("style","display: block");
+    }
+}

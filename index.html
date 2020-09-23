@@ -12,9 +12,9 @@
   </head>
   <body>
     <!-- nav containing view highscores link, and timer -->
-    <ul class="nav justify-content-between">
+    <ul id = "topBar" class="nav justify-content-between">
         <li class="nav-item">
-          <a class="nav-link active" href="#">View Highscores</a>
+          <a id = "navViewHs" class="nav-link active" href="#">View Highscores</a>
         </li>
         <li class="nav-item">
           <p style="float:left">Time:</p>
@@ -133,15 +133,11 @@
         <p id="feedback"></p>
     </div>
   
-    <!-- make view highscores link work -->
-    <!-- store list in local storage? -->
-    <!-- make highscores ordered list -->
-    <!-- arrange highscores based on order -->
-    <!-- make timer stop after finishing questions -->
-    <!-- reset timer after clicking go back button on highscore card -->
     <!-- redirect to enter initials card if time runs out -->
-    <!-- if answer is incorrect, let user know + time is deducted from clock -->
-    <!-- when all questions are answered or the timer reaches 0, the game is over -->
+    <!-- if answer is incorrect time is deducted from clock -->
+    <!-- reset timer to zero at begin card -->
+    <!-- store list in local storage? -->
+    <!-- arrange highscores based on order -->
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
