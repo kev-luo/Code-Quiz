@@ -18,12 +18,12 @@ var scoreList = document.querySelector("#highS");
 // button variables
 var beginBtn = document.querySelector("#btnBegin");
 var initialBtn = document.querySelector("#btnInitial");
+var goBackBtn = document.querySelector("#goBack");
+var clearHsBtn = document.querySelector("#clearHs");
 
 // number variables
-var secondsLeft = document.querySelector("#timeLeft");
-var seconds = 100;
-var questionNumber = 0;
-var score = 0;
+var questionNumber;
+var score;
 
 // quiz question variables
 var answers = {"qu1": "this",
@@ -33,27 +33,35 @@ var answers = {"qu1": "this",
 "qu5": "both"};
 
 // highscore variable
-var highscores = [];
+var highscoresArray = [];
 
 // EVENT LISTENERS
 beginBtn.addEventListener("click",beginTimer);
 quests.addEventListener("click",question);
 initialBtn.addEventListener("click",addInitials);
+goBackBtn.addEventListener("click",back);
+clearHsBtn.addEventListener("click",clearH);
+
 
 // FUNCTIONS
 // ===========================================================
 // begin timer function
 function beginTimer(event) {
     event.preventDefault();
+
+    var secondsLeft = document.querySelector("#timeLeft");
+    var seconds = 100;
+
     beginQuiz.setAttribute("style", "display: none");
     qu1.setAttribute("style", "display: block");
     score = 0;
+    questionNumber = 0;
 
     var timeInterval = setInterval(function() {
         seconds--;
         secondsLeft.textContent = seconds;
 
-        if (seconds === 0) {
+        if (seconds === 0 || initial.getAttribute("style")==="display: block") {
             clearInterval(timeInterval);
         }
     },1000);
@@ -105,7 +113,7 @@ function question(event) {
 function addInitials(event) {
     event.preventDefault();
     var name = initialInp.value;
-    highscores.push({entry:name+' - '+score.toString()});
+    highscoresArray.push({entry:name+' - '+score.toString()});
 
     var li = document.createElement("li");
     li.textContent = name+' - '+score.toString();
@@ -115,6 +123,17 @@ function addInitials(event) {
     highScore.setAttribute("style","display: block");
 }
 
-// highscores functions
+// go back function
+function back(event) {
+    event.preventDefault();
+    highScore.setAttribute("style", "display: none");
+    beginQuiz.setAttribute("style", "display: block");
+}
+
+// clear highscores function
+function clearH(event) {
+    event.preventDefault();
+    scoreList.innerHTML = '';
+}
 
 
