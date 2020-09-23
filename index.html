@@ -106,21 +106,22 @@
         <div id = "initials" class="card" style="display: none">
             <div class="card-body">
                 <h2 class="card-title font-weight-bold">All done!</h2>
+                <p class="card-text" style="float: left; margin-right: 10px;">Final Score (Out of 5): </p>
                 <p id = "finalScore" class="card-text"></p>
                 <form class="form-inline">
                     <label class="sr-only" for="initials">Name</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2" id="initials" placeholder="Enter Initials">
-                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    <input id="initialsInp" type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Initials">
+                    <button id = "btnInitial" type="button" class="btn btn-primary mb-2">Submit</button>
             </div>
         </div>
     </div>
 
     <!-- Highscores card -->
     <div class = "mx-auto" style="width:50%">
-        <div id = "" class="card" style="display: none">
+        <div id = "highScores" class="card" style="display: none">
             <div class="card-body">
                 <h2 class="card-title font-weight-bold">Highscores</h2>
-                <p id = "highS" class="card-text"></p>
+                <ol id = "highS" class="card-text"></ol>
                 <button id = "goBack" type="button" class="btn btn-primary ">Go Back</button>
                 <button id = "clearHS" type="button" class="btn btn-primary ">Clear Highscores</button>
             </div>
@@ -132,13 +133,15 @@
         <p id="feedback"></p>
     </div>
   
+    <!-- store list in local storage? -->
+    <!-- make highscores ordered list -->
+    <!-- add new highscores -->
+    <!-- arrange highscores based on order -->
     <!-- make timer stop after finishing questions -->
     <!-- redirect to enter initials card if time runs out -->
-    <!-- create card to enter initials -->
     <!-- if answer is incorrect, let user know + time is deducted from clock -->
     <!-- when all questions are answered or the timer reaches 0, the game is over -->
-    <!-- when game is over, you're presented with your final score and an input area for your name to submit to highscores table -->
-    <!-- include a clear highscores button -->
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
