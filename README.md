@@ -30,7 +30,7 @@ By putting all the question cards inside a parent div, I was able to take advant
 ## Usage
 To begin the quiz, simply follow the link below and click the "Let's Do This" button. 
 
-[Soccer-Quiz](https://kev-luo.github.io/Code-Quiz/)
+[Soccer-Quiz](https://kev-luo.github.io/Soccer-Quiz/)
 
 The starting page will display a time of 0, and once you begin the quiz the timer displays a countdown from 60 seconds. Each incorrect answer deducts 10 seconds from your time remaining. After you've completed the quiz, enter your initials and compare how you did with others on the highscore chart. If you didn't do as well as you'd hoped, there's always the option to try again.
 
