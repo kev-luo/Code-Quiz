@@ -2,8 +2,8 @@
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub top language](https://img.shields.io/github/languages/top/kev-luo/password-generator)
-![GitHub language count](https://img.shields.io/github/languages/count/kev-luo/password-generator)
+![GitHub top language](https://img.shields.io/github/languages/top/kev-luo/Soccer-Quiz?style=plastic)
+![GitHub language count](https://img.shields.io/github/languages/count/kev-luo/Soccer-Quiz?style=plastic)
 
 ## Description
 
