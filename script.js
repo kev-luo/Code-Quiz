@@ -87,8 +87,8 @@ function beginTimer(event) {
 // questions function
 function question(event) {
     event.preventDefault();
-    var parent = event.target.parentElement.id;
-    container = event.currentTarget.children;
+    var parent = event.target.parentElement.id; // div with id that matches a key in the "answers" object. corresponding value is the correct answer for the question.
+    container = event.currentTarget.children; // number of questions
 
     if (event.target.matches("button") && questionNumber < (container.length)-1) { // what to do if button is clicked and it's' not the last question
         if (event.target.textContent === answers[parent]) { // what to do if answer is correct
@@ -152,7 +152,7 @@ function back(event) {
     beginQuiz.setAttribute("style","display: block"); // change display back to intro card
     bar.setAttribute("style","visibility: inline");
     seconds = 0; // clean timer, resets game if user chooses to view highscores mid quiz
-    secondsLeft.textContent = seconds;
+    secondsLeft.textContent = seconds; // display shows 0 seconds
 }
 
 // clear highscores function
