@@ -38,6 +38,7 @@ var answers = {"qu1": "Uruguay",
 "qu5": "Messi"};
 
 // EVENT LISTENERS
+// ===========================================================
 beginBtn.addEventListener("click",beginTimer);
 quests.addEventListener("click",question);
 initialBtn.addEventListener("click",addInitials);
@@ -162,7 +163,7 @@ function clearH(event) {
 }
 
 // view highscores function
-function view(event) {
+function view() {
     if (beginQuiz.getAttribute("style") ==="display: block") { // which cards to display/hide if highscores link clicked on home page
         beginQuiz.setAttribute("style","display: none");
         bar.setAttribute("style","visibility: hidden");
