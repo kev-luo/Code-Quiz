@@ -12,7 +12,7 @@ In the assignments up to this point, we've mainly been manipulating the DOM (Doc
 The benefit of dynamically updated sites is the improved user experience - websites can now respond/change based on what the user chooses to do while visiting the site. With an enhanced user experience, it follows that re-visits and new traffic would increase in response. Through this assignment I was able to get a glimpse of how complex web development can be. Ensuring that all dynamically updated elements function as expected requires lots of experimentation with the code to minimize bugs/errors.  
 
 ## Table of Contents
-* Installation
+* Process
 * Usage
 * Credits
 * Contributing
